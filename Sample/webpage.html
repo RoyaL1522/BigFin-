@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>BigFin Food Corporation</title>
@@ -108,6 +108,38 @@ section p {
   color: #666; /* Grey text color for paragraphs */
 }
 
+.menu-item {
+  padding: 20px;
+}
+
+.menu-item h3 {
+  margin: 10px 0;
+}
+
+.menu-item p {
+  margin: 5px 0;
+}
+
+.menu-item .price {
+  font-size: 18px;
+  color: #333;
+}
+
+.menu-item .buy-now-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #fdd835; /* Yellow color for button */
+  color: #333; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu-item .buy-now-btn:hover {
+  background-color: #ffeb3b; /* Lighter yellow on hover */
+  color: #000;
+}
+
 /* Style footer */
 footer {
   background-color: #333;
@@ -166,6 +198,7 @@ header.scrolled {
   </div>
   <nav>
     <a href="#menu">MENU</a>
+    <a href="#order">ORDER NOW</a>
     <a href="#about">ABOUT US</a>
     <a href="#contact">CONTACT</a>
     <a href="login.html">LOG IN</a>
@@ -186,21 +219,42 @@ header.scrolled {
   <div class="w3-content w3-container w3-padding-64">
     <h2>MENU</h2>
     <div class="w3-row-padding w3-center">
-      <div class="w3-col m6">
+      <div class="w3-col m6 menu-item">
         <img src="menu_item1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Original Flavor">
         <h3>Original Flavor</h3>
         <p>Squidee Original Flavor</p>
         <p>A squid with unique sensation like smoky-fermented taste that brings umami flavor.</p>
+        <p class="price">₱ 200.00</p>
+        <a href="#" class="buy-now-btn">Buy Now</a>
       </div>
 
-      <div class="w3-col m6">
+      <div class="w3-col m6 menu-item">
         <img src="menu_item2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Spicy Flavor">
         <h3>Spicy Flavor</h3>
         <p>Squidee Spicy Flavor</p>
         <p>Squidee is a smoked spicy fermented squid with unique sensation like smoky-fermented taste and spices that brings umami flavor.</p>
+        <p class="price">₱ 220.00</p>
+        <a href="#" class="buy-now-btn">Buy Now</a>
       </div>
     </div>
   </div>
+</section>
+
+<!-- Container (Order Section) -->
+<section class="w3-content w3-container w3-padding-64" id="order">
+  <h2>ORDER NOW</h2>
+  <p><em>Place your order and select your preferred mode of payment.</em></p>
+  <form>
+    <label for="payment-method">Select Payment Method:</label>
+    <select id="payment-method" name="payment-method" class="w3-select w3-border">
+      <option value="credit-card">Credit Card</option>
+      <option value="g-cash">G-Cash</option>
+      <option value="cash-on-delivery">Cash on Delivery</option>
+    </select>
+    <div class="w3-padding-16">
+      <button type="submit" class="w3-button w3-yellow">Submit Order</button>
+    </div>
+  </form>
 </section>
 
 <!-- Container (About Section) -->
