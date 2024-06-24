@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>BigFin Food Corporation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+  color: #333; /* Default text color */
+  margin: 0;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url("bigfin_bg1.jpg");
+  min-height: 100vh; /* Adjusted to viewport height */
+}
+
+/* Second image (Menu) */
+.bgimg-2 {
+  background-image: url("bigfin_bg2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("bigfin_bg3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide { letter-spacing: 10px; }
+.w3-hover-opacity { cursor: pointer; }
+
+/* Style the header */
+header {
+  background-color: transparent; /* Transparent background initially */
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Align items in header */
+  align-items: center; /* Vertically center items */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+header .logo {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center items */
+  margin-left: 20px;
+}
+
+header .logo img {
+  width: 80px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: middle;
+}
+
+header .company-name {
+  margin-left: 10px;
+}
+
+header nav {
+  float: right;
+}
+
+header nav a {
+  color: #333; /* Default text color */
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+header nav a:hover {
+  color: #0277bd; /* Blue color on hover */
+}
+
+/* Adjust padding of main content */
+main {
+  padding-top: 120px; /* Ensure content starts below fixed header */
+}
+
+/* Style sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section h2 {
+  color: #0277bd; /* Blue color for section headers */
+  font-size: 36px;
+}
+
+section p {
+  font-size: 18px;
+  color: #666; /* Grey text color for paragraphs */
+}
+
+/* Style footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Social icons color */
+footer a:hover {
+  color: #0277bd; /* Blue color on hover */
+}
+
+/* Change header color on scroll */
+header.scrolled {
+  background-color: #fdd835; /* Yellow color for scrolled header */
+}
+
+/* Modal for full-size images on click */
+#modal01 {
+  z-index: 1500; /* Ensure modal is above header */
+}
+
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+  header .logo img {
+    width: 60px; /* Adjust logo size for smaller screens */
+  }
+  header .company-name {
+    display: none; /* Hide company name on smaller screens */
+  }
+  header nav {
+    float: none; /* Center nav links on smaller screens */
+    margin-top: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<header>
+  <div class="logo">
+    <img src="bigfin_logo.jpg" alt="Company Logo">
+    <span class="company-name">
+      <h1>BigFin Food</h1>
+      <h2>Corporation</h2>
+    </span>
+  </div>
+  <nav>
+    <a href="#menu">MENU</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#contact">CONTACT</a>
+    <a href="login.html">LOG IN</a>
+  </nav>
+</header>
+
+<div class="bgimg-1 w3-display-container" id="home">
+  <img src="bigfin_bg1.jpg" alt="BigFin Food Background Image" style="width:100%; min-height: 100vh; object-fit: cover;">
+  <div class="w3-display-middle w3-text-black">
+    <div class="w3-center w3-padding-large">
+      <span class="w3-xlarge w3-wide w3-animate-opacity">BigFin Food Corporation</span>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Menu Section) -->
+<section class="bgimg-2" id="menu">
+  <div class="w3-content w3-container w3-padding-64">
+    <h2>MENU</h2>
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m6">
+        <img src="menu_item1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Original Flavor">
+        <h3>Original Flavor</h3>
+        <p>Squidee Original Flavor</p>
+        <p>A squid with unique sensation like smoky-fermented taste that brings umami flavor.</p>
+      </div>
+
+      <div class="w3-col m6">
+        <img src="menu_item2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Spicy Flavor">
+        <h3>Spicy Flavor</h3>
+        <p>Squidee Spicy Flavor</p>
+        <p>Squidee is a smoked spicy fermented squid with unique sensation like smoky-fermented taste and spices that brings umami flavor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Container (About Section) -->
+<section class="w3-content w3-container w3-padding-64" id="about">
+  <h2>ABOUT US</h2>
+  <p><em>Welcome to BigFin Food Corporation. We aim to provide the best seafood experience with our delicious Squidee products.</em></p>
+  <p>We specialize in creating flavors that excite the taste buds and leave you wanting more. Our commitment to quality ensures that each bite is a delight.</p>
+  <p>Explore our menu and discover a world of flavors crafted with passion and care. Join us on this culinary journey!</p>
+</section>
+
+<!-- Third Parallax Image with Contact Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="contact">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">CONTACT US</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<section class="w3-content w3-container w3-padding-64">
+  <h2>CONTACT INFORMATION</h2>
+  <p><em>Reach out to us for any inquiries or feedback.</em></p>
+
+  <div class="w3-row w3-padding-32">
+    <div class="w3-col m4 w3-container">
+      <img src="location_map.png" class="w3-image w3-round" style="width:100%" alt="Location Map">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <p><i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Santa Rosa 2, Noveleta Cavite, Philippines</p>
+      <p><i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> +63 241-753-2961</p>
+      <p><i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> BigFinFoodCorp@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="#"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="#"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  </div>
+  <p>&copy; 2024 by BigFin Food Corporation. All rights reserved.</p>
+</footer>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+  </div>
+</div>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() { myFunction() };
+
+function myFunction() {
+  var header = document.querySelector("header");
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+}
+</script>
+
+</body>
+</html>
